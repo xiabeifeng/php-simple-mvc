@@ -6,8 +6,8 @@ header("Content-type: text/html; charset=utf-8");
 require_once './functions.php';
 
 // 接收控制器参数和方法参数
-$action = $_GET['a'] ? htmlspecialchars($_GET['a']) : 'Index';
-$method = $_GET['m'] ? htmlspecialchars($_GET['m']) : 'index';
+$action = isset($_GET['a']) ? htmlspecialchars($_GET['a']) : 'Index';
+$method = isset($_GET['m']) ? htmlspecialchars($_GET['m']) : 'index';
 
 // 注册自动加载控制器函数
 spl_autoload_register('loadControllerFile');
